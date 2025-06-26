@@ -1,0 +1,12 @@
+[19-Apr-2025 19:00:13 UTC] PHP Fatal error:  Uncaught Error: Class "SimplePie\SimplePie" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/library/SimplePie.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/library/SimplePie.php on line 63
+[03-May-2025 06:08:26 UTC] PHP Fatal error:  Uncaught Error: Class "SimplePie\SimplePie" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/library/SimplePie.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/library/SimplePie.php on line 63
+[16-Jun-2025 08:56:40 UTC] PHP Fatal error:  Uncaught Error: Class "SimplePie\SimplePie" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/library/SimplePie.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/library/SimplePie.php on line 63

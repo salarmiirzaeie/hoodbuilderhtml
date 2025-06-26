@@ -1,0 +1,120 @@
+ 
+
+ 
+
+redirect 301 /restaurant-construction/  /services/restaurant-services/construction/
+redirect 301 /cleaning-and-maintenance/  /services/restaurant-services/cleaning/
+redirect 301 /food-truck-builders/    /services/food-trucks/construction/
+redirect 301 /commercial-kitchen-hoods/   /services/hoods/
+redirect 301 /average-manager-vs-great-manager/  /
+RedirectMatch 301 /bang*   /
+redirect 301 /how-to-commercial-hood-restaurant/   /
+redirect 301 /store/  /
+redirect 301 /5-dangers-of-an-improperly-installed-exhaust-hood-system/  /
+redirect 301 /ventilation-direct/   /services/hvac/ventilation/
+redirect 301 /winair/  /
+redirect 301 /professional-review-of-custom-academic-company-available-for-applicants/  /
+redirect 301 /controversial-topics-for-research-papers-3/  /
+RedirectMatch 301 /stars/*  /
+RedirectMatch 301 /xq81/*  /
+redirect 301 /recommendations-to-improve-organizational-climate/ /
+redirect 301 /uberarbeitung-von-aufsatz-ghostwriterburo-fur-studiosi/ /
+redirect 301 /hello-world-2/ /
+redirect 301 /firm-is-the-skill-of-guessing-tomorrow-and-having-have-the-benefit-of-it-touch-upon/ /
+redirect 301 /writers-and-spots-does-destination-really-make-a/ /
+redirect 301 /review-von-projekt-online-kundenservice-fur-horern/ /
+redirect 301 /the-best-way-to-produce-your-own-1st-book-3/ /
+redirect 301 /hood-mart/ /
+redirect 301 /on-the-internet-unique-making-service-plan/ /
+redirect 301 /restaurant-cleaning-and-maintenance/ /restaurant-services/cleaning/
+redirect 301 /ventillation-and-hvac/ /services/hvac/ventilation/
+redirect 301 /comparison-of-academic-custom-writing-service-with-respect-to-learners/  /
+redirect 301 /how-exactly-to-create-a-two-page-paper-in-one-day/  /
+redirect 301 /how-the-right-kitchen-exhaust-fan-can-build-your-business/  /
+redirect 301 /who-can-i-pay-to-write-my-paper-for-me/ /
+redirect 301 /about/ /about-us/
+redirect 301 /task-composing-solution-writing-jobs-from-home/   /
+redirect 301 /high-grade-essay-simply-writing-services/  /
+redirect 301 /lab-say-format-key-element-portions-of-your-claim-and-useful-tips/  /
+redirect 301 /environmental-tourists-as-the-economic-inducement-to-safeguard-the-community/  /
+redirect 301 /spouse-and-children-snapshot-authoring-timely/  /
+redirect 301 /facts-about-air-conditioning-2/ /
+redirect 301 /feed-back-of-custom-essay-agency-just-for-university-students/  /
+redirect 301 /check-of-paper-writing-service-with-regard-to-university-students/   /
+redirect 301 /examination-of-custom-writing-company-for-grad-students/ /
+redirect 301 /review-of-custom-academic-company-for-the-college-students/ /
+redirect 301 /hood-installation-and-repairs/ /services/hoods/installation/
+redirect 301 /assessment-of-academic-custom-editing-service-needed-for-college-students/ /
+redirect 301 /the-toefl-ibt-examination-improving-your-writing-25/     /
+redirect 301 /9-factors-which-help-staff-members-produce-outstanding-compliment/  /
+redirect 301 /greatest-independent-publishing-duties-over-the-internet-which-you-may-choose-from-a-home-office/ /
+redirect 301 /documents-and-term-papers-38/ /
+redirect 301 /captive-aire/  /
+redirect 301 /how-to-execute-two-times-the-simply-writing-in/ /
+redirect 301 /obtain-tailor-made-essay-or-need-to-have-proofreading-or-editorial-services/ /
+redirect 301 /a-place-where-one-can-obtain-dissertation-cheaper-and-rapid/  /
+redirect 301 /just-how-to-publish-an-autobiographical-essay/  /
+redirect 301 /ventillation-and-hvac    /services/hvac/ventilation/
+redirect 301 /tips-on-how-to-attain-2-times-the-formulating-by/  /
+redirect 301 /study-of-uk-custom-writing-website-on-behalf-of-students/ /
+redirect 301 /then-finally-you-have-discovered-the-top-dissertation-making-service-plan-really/ /
+redirect 301 /just-how-to-put-an-interview-to-a-research-paper/ /
+redirect 301 /university-or-college-way-of-life-individuals-you-ought-to-avert/ /
+redirect 301 /how-to-produce-a-page/ /
+redirect 301 /how-to-decide-the-perfect-category-and-department-essay-concepts/ /
+redirect 301 /2017/03/18/digital-product-design-principles/  /
+redirect 301 /300-awesome-free-tools-services-for-startup-entrepreneurs/ /
+redirect 301 /3-impressive-quotations-to-give-you-producing/  /
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+#WordPressProtect drop, 5
+# END WordPress
+ 
+
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+ # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Video
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/mpeg "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Others
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+</IfModule>
+
+
+ 

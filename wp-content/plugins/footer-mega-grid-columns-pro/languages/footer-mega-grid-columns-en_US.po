@@ -1,0 +1,277 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Footer Mega Grid Columns Pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-11 06:19+0000\n"
+"PO-Revision-Date: 2017-01-11 06:19+0000\n"
+"Last-Translator: admin <pratikjain@sptechnolab.com>\n"
+"Language-Team: English (United States)\n"
+"Language: en-US\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: fmgc-plugin-updater.php:15
+msgid "Footer Mega Grid Columns"
+msgstr ""
+
+#: fmgc-plugin-updater.php:15
+msgid "Plugin License"
+msgstr ""
+
+#: fmgc-plugin-updater.php:314
+msgid "Activate Plugin License"
+msgstr ""
+
+#: fmgc-plugin-updater.php:314
+msgid "License"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:47
+msgid "Footer Mega Grid Columns - Pro Settings"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:47
+msgid "Footer Mega Grid Columns - Pro"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:105
+msgid "Footer Mega Grid Columns PRO"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:107
+msgid ""
+"Footer Mega Grid Columns Pro - Register a widget area for your theme and "
+"allow you to add and display widgets in grid view."
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:132
+msgid "Footer Mega Grid Columns Settings"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:134
+msgid "Select the Grid"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:136
+msgid "Grid 1"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:137
+msgid "Grid 2"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:138
+msgid "Grid 3"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:139
+msgid "Grid 4"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:140
+msgid "Grid 5"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:141
+msgid "Grid 6"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:142
+msgid "Grid 7"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:143
+msgid "Grid 8"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:144
+msgid "Grid 9"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:145
+msgid "Grid 10"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:146
+msgid "Grid 11"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:147
+msgid "Grid 12"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:152
+msgid "CSS Class"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:214
+msgid "View Documentation"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:214
+msgid "Docs"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:215
+msgid "Visit Customer Support Forum"
+msgstr ""
+
+#: includes/admin/class-fmgcp-admin.php:215
+msgid "Support"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:22
+msgid "How it works, our plugins and offers"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:22
+#: includes/admin/fmgc-how-it-work.php:118
+msgid "How It Works"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:103
+msgid ""
+"There was an error retrieving the data from the server. Please try again "
+"later."
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:121
+msgid "Our Plugins"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:127
+msgid "WPOS Offers"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:163
+msgid "How It Works - Display and shortcode"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:171
+msgid "Getting Started with Footer Mega Grid Columns Pro"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:175
+msgid ""
+"Step-1: This plugin create a \"Settings - FMGC Pro\" menu tab in WordPress "
+"menu and sidebar widget area in Appearance -> Widgets with  name Footer Mega "
+"Grid Columns PRO."
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:176
+msgid "Step-2: Go to \"Appearance -> Widgets\"."
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:177
+msgid "Step-3: Add any type of widget in Footer Mega Grid Columns PRO Sidebar."
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:184
+msgid "How Shortcode Works"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:188
+msgid "Paste below code in footer.php file of your active wordpress theme."
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:208
+msgid "Need Support?"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:211
+msgid "Check plugin document for shortcode parameters and demo for designs."
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:212
+msgid "Documentation"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:213
+msgid "View PRO Designs"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:224
+msgid "Help to improve this plugin!"
+msgstr ""
+
+#: includes/admin/fmgc-how-it-work.php:227
+msgid "Enjoyed this plugin? You can help by rate this plugin"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:15
+msgid "Footer Mega Grid Columns Pro Settings"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:21
+msgid "Your changes saved successfully."
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:43
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:53
+msgid "Footer Background Color"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:57
+msgid "Select footer background color."
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:63
+msgid "Widget Title Color"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:67
+msgid "Select color for widget title."
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:73
+msgid "Widget Anchor Tag Color"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:77
+msgid "Select color for widget link."
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:83
+msgid "Widget Content Color"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:87
+msgid "Select color for widget content."
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:93
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:97
+msgid "Enter custom CSS to override plugin CSS."
+msgstr ""
+
+#: includes/admin/settings/fmgc-settings.php:102
+msgid "Save Changes"
+msgstr ""
+
+#. Name of the plugin
+msgid "Footer Mega Grid Columns Pro"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Footer Mega Grid Columns - Register a widget area for your theme and allow "
+"you to add and display widgets in grid view with multiple columns."
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.wponlinesupport.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "WP Online Support"
+msgstr ""

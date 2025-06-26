@@ -1,0 +1,12 @@
+[08-Apr-2024 08:38:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function esc_html_x() in /home/hoodbuilder1423/public_html/wp-content/themes/twentytwentythree/patterns/hidden-404.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-content/themes/twentytwentythree/patterns/hidden-404.php on line 13
+[30-Mar-2025 13:49:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function esc_html_x() in /home/hoodbuilder1423/public_html/wp-content/themes/twentytwentythree/patterns/hidden-404.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-content/themes/twentytwentythree/patterns/hidden-404.php on line 13
+[23-Jun-2025 08:16:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function esc_html_x() in /home/hoodbuilder1423/public_html/wp-content/themes/twentytwentythree/patterns/hidden-404.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-content/themes/twentytwentythree/patterns/hidden-404.php on line 13

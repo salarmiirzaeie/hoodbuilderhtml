@@ -1,0 +1,72 @@
+[19-Apr-2025 19:01:24 UTC] PHP Fatal error:  Uncaught Error: Class "SimplePie" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Core.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Core.php on line 53
+[19-Apr-2025 19:02:46 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Item.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Item.php on line 57
+[19-Apr-2025 19:02:54 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Locator.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Locator.php on line 55
+[19-Apr-2025 19:03:17 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Parser.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Parser.php on line 58
+[19-Apr-2025 19:04:16 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Sanitize.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Sanitize.php on line 63
+[19-Apr-2025 19:04:33 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Source.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Source.php on line 57
+[03-May-2025 06:09:42 UTC] PHP Fatal error:  Uncaught Error: Class "SimplePie" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Core.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Core.php on line 53
+[03-May-2025 06:11:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Item.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Item.php on line 57
+[03-May-2025 06:11:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Locator.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Locator.php on line 55
+[03-May-2025 06:11:28 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Parser.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Parser.php on line 58
+[03-May-2025 06:12:12 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Sanitize.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Sanitize.php on line 63
+[03-May-2025 06:12:29 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Source.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Source.php on line 57
+[16-Jun-2025 08:55:16 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Locator.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Locator.php on line 55
+[16-Jun-2025 08:55:31 UTC] PHP Fatal error:  Uncaught Error: Class "SimplePie" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Core.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Core.php on line 53
+[16-Jun-2025 08:55:32 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Parser.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Parser.php on line 58
+[16-Jun-2025 08:57:32 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Source.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Source.php on line 57
+[16-Jun-2025 08:58:08 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Sanitize.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Sanitize.php on line 63
+[16-Jun-2025 08:58:08 UTC] PHP Fatal error:  Uncaught Error: Interface "SimplePie\RegistryAware" not found in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Item.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/SimplePie/src/Item.php on line 57

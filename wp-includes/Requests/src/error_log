@@ -1,0 +1,8 @@
+[19-Apr-2025 18:56:52 UTC] PHP Fatal error:  Uncaught Error: Interface "WpOrg\Requests\HookManager" not found in /home/hoodbuilder1423/public_html/wp-includes/Requests/src/Hooks.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/Requests/src/Hooks.php on line 19
+[03-May-2025 06:05:25 UTC] PHP Fatal error:  Uncaught Error: Interface "WpOrg\Requests\HookManager" not found in /home/hoodbuilder1423/public_html/wp-includes/Requests/src/Hooks.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/Requests/src/Hooks.php on line 19

@@ -1,0 +1,48 @@
+[14-Nov-2023 15:45:01 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[14-Nov-2023 15:45:01 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php on line 17
+[14-Nov-2023 15:45:01 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17
+[19-Apr-2025 19:57:47 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[19-Apr-2025 19:57:52 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php on line 17
+[19-Apr-2025 19:58:01 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17
+[03-May-2025 07:04:13 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[03-May-2025 07:04:19 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php on line 17
+[03-May-2025 07:04:33 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17
+[16-Jun-2025 08:58:26 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php on line 17
+[16-Jun-2025 08:58:26 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[16-Jun-2025 08:58:45 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Sitemaps_Provider" not found in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17

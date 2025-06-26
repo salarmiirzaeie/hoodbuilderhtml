@@ -1,0 +1,24 @@
+[19-Apr-2025 19:54:29 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Search_Handler" not found in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php on line 17
+[19-Apr-2025 19:54:36 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Search_Handler" not found in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-search-handler.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-search-handler.php on line 17
+[19-Apr-2025 19:54:58 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Search_Handler" not found in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-term-search-handler.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-term-search-handler.php on line 17
+[03-May-2025 07:01:27 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Search_Handler" not found in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php on line 17
+[03-May-2025 07:01:38 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Search_Handler" not found in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-search-handler.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-post-search-handler.php on line 17
+[03-May-2025 07:02:09 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Search_Handler" not found in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-term-search-handler.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/rest-api/search/class-wp-rest-term-search-handler.php on line 17

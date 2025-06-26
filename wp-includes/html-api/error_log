@@ -1,0 +1,16 @@
+[19-Apr-2025 19:33:32 UTC] PHP Fatal error:  Uncaught Error: Class "WP_HTML_Tag_Processor" not found in /home/hoodbuilder1423/public_html/wp-includes/html-api/class-wp-html-processor.php:143
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/html-api/class-wp-html-processor.php on line 143
+[19-Apr-2025 19:35:07 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Token_Map" not found in /home/hoodbuilder1423/public_html/wp-includes/html-api/html5-named-character-references.php:38
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/html-api/html5-named-character-references.php on line 38
+[03-May-2025 06:38:43 UTC] PHP Fatal error:  Uncaught Error: Class "WP_HTML_Tag_Processor" not found in /home/hoodbuilder1423/public_html/wp-includes/html-api/class-wp-html-processor.php:143
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/html-api/class-wp-html-processor.php on line 143
+[03-May-2025 06:40:03 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Token_Map" not found in /home/hoodbuilder1423/public_html/wp-includes/html-api/html5-named-character-references.php:38
+Stack trace:
+#0 {main}
+  thrown in /home/hoodbuilder1423/public_html/wp-includes/html-api/html5-named-character-references.php on line 38
