@@ -11,16 +11,7 @@
   max-width: 1000px;
   width: 65%;
 }
-.hero-section-container {
-  background-color: #858585;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  padding: 60px 0;
-}
+
 @media (max-width: 992px) {
   .hero-section h1,
   .hero-section h2 {

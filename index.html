@@ -25,6 +25,24 @@
     <!-- Actual tags -->
     <link rel="stylesheet" href="assets/index-BvzQT1ZY.css" />
     <script type="module" src="assets/index-D976Dntm.js"></script>
+    <style>
+      .hero-section-container {
+        background-color: #858585;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 60px 0;
+        position: relative;
+      }
+    </style>
+    <IfModule mod_expires.c>
+      ExpiresActive On ExpiresByType text/css "access plus 1 year" ExpiresByType application/javascript "access plus 1
+      year" ExpiresByType font/ttf "access plus 1 year" ExpiresByType image/jpeg "access plus 1 year" ExpiresByType
+      image/png "access plus 1 year" ExpiresByType image/webp "access plus 1 year"
+    </IfModule>
   </head>
   <body>
     <!-- Top Bar -->
@@ -412,8 +430,9 @@
           <div class="slider-track">
             <div class="slider-card">
               <img
-                loading="eager"
+                loading="lazy"
                 class="slider-card-background"
+                decoding="async"
                 src="images/img-slider-fire-protection.webp"
                 alt="Professional chef cooking on a commercial kitchen stove"
               />
@@ -433,6 +452,7 @@
             <div class="slider-card">
               <img
                 loading="lazy"
+                decoding="async"
                 class="slider-card-background"
                 src="images/img-slider-generalcontracting.webp"
                 alt="Construction tools including gloves, alignment tool, and building blueprints on a work table"
@@ -454,6 +474,7 @@
               <img
                 loading="lazy"
                 class="slider-card-background"
+                decoding="async"
                 src="images/img-slider-restaurants.webp"
                 alt="Interior of a modern restaurant with neatly arranged tables and chairs"
               />
@@ -474,6 +495,7 @@
               <img
                 loading="lazy"
                 class="slider-card-background"
+                decoding="async"
                 src="images/img-slider-hoods.webp"
                 alt="Commercial restaurant kitchen with stainless steel exhaust hoods over cooking stations"
               />
@@ -493,6 +515,7 @@
             <div class="slider-card">
               <img
                 loading="lazy"
+                decoding="async"
                 class="slider-card-background"
                 src="images/img-slider-air-balancing.webp"
                 alt="Digital air balancing screen used to control HVAC airflow and temperature"
