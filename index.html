@@ -14,7 +14,7 @@
     <link rel="preload" href="assets/index-BvzQT1ZY.css" as="style" onload="this.rel='stylesheet'" />
 
     <!-- Preload hero image -->
-    <link rel="preload" href="images/img-slider-fire-protection.webp" as="image" media="(min-width: 600px)" />
+    <link rel="preload" href="images/img-slider-fire-protection.webp" as="image" />
 
     <!-- Preload critical JS -->
     <link rel="preload" href="assets/index-D976Dntm.js" as="script" />
@@ -412,11 +412,15 @@
           <div class="slider-track">
             <div class="slider-card">
               <img
+                fetchpriority="high"
                 loading="eager"
                 class="slider-card-background"
                 src="images/img-slider-fire-protection.webp"
                 alt="Professional chef cooking on a commercial kitchen stove"
+                width="475"
+                height="520"
               />
+
               <a class="slider-card-content" href="services/fire-suppression-systems/index.html">
                 <div class="slider-card-icon">
                   <div class="slider-card-circle"></div>
