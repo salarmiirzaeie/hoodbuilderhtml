@@ -1,8 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      .hero-section,
+      .nav-menu-list-link,
+      .slider-card-text p {
+        font-family: Montserrat, sans-serif;
+      }
+      .nav-menu-list,
+      .submenu ul {
+        list-style: none;
+      }
+      .main-nav-quote-btn,
+      .slider-card-text span {
+        font-family: Montserrat, sans-serif;
+        vertical-align: middle;
+      }
+      .hero-section {
+        color: #fff;
+        padding: 0;
+        margin: 0 10px 8px;
+      }
+      .hero-section h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: 900;
+        max-width: 1000px;
+        width: 65%;
+      }
+      *,
+      body {
+        margin: 0;
+      }
+      .hero-section-container {
+        background-color: #858585;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 60px 0;
+      }
+      @media (max-width: 772px) {
+        .main-nav-phone {
+          display: none;
+        }
+      }
+      .slider-section {
+        padding: 0;
+        overflow: hidden;
+        margin: 0 10px;
+      }
+      .slider-container {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .slider-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        padding: 0;
+      }
+      .slider-track {
+        display: flex;
+        gap: 10px;
+      }
+      .slider-card {
+        box-sizing: border-box;
+        flex: 0 0 calc((100% - 30px) / 4);
+        height: 500px;
+        border: none;
+        background-color: #9f7272;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #333;
+        padding: 0;
+        position: relative;
+      }
+      @media (max-width: 1200px) {
+        .slider-card {
+          flex: 0 0 calc((100% - 20px) / 3);
+        }
+      }
+      @media (max-width: 992px) {
+        .hero-section h1,
+        .hero-section h2 {
+          width: 90%;
+        }
+        .slider-card {
+          flex: 0 0 calc((100% - 10px) / 2);
+        }
+      }
+      @media (max-width: 768px) {
+        .slider-card {
+          flex: 0 0 100%;
+        }
+      }
+      .slider-card-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .slider-card-content,
+      .slider-card-icon {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+      }
+      .slider-card-content {
+        z-index: 1;
+        color: #fff;
+        background-color: #00000080;
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+      .slider-card-icon {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      .slider-card-icon img {
+        width: 80px;
+        height: 80px;
+        z-index: 3;
+      }
+      .slider-card-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        background-color: #a9a790b3;
+        position: absolute;
+        z-index: 2;
+      }
+      .slider-arrow,
+      header {
+        background-color: #fff;
+      }
+      .slider-card-text {
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+      }
+      .slider-card-text p {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+        margin: 0;
+        padding: 0 10px;
+        position: absolute;
+        top: 350px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+      }
+      .slider-card-text div {
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        opacity: 0;
+      }
+      .slider-card-text span {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 10px 50px;
+        border: 1px solid #fff;
+        background-color: transparent;
+      }
+      .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        color: #5e5f5e;
+      }
+      .main-logo,
+      .main-logo img {
+        height: 100%;
+        width: 100%;
+      }
+      .slider-prev {
+        left: 0;
+      }
+      .slider-next {
+        right: 0;
+      }
+      :root {
+        --color-primary: #0067ab;
+        --color-primary-dark: #004f87;
+        --color-primary-light: #3388c1;
+        --color-secodary: #000000;
+        --color-secondary-dark: #000000;
+        --color-secondary-light: #000000;
+        --color-link-primary: #c01313;
+        --color-link-secondary: #e7ff33;
+        --color-gray-primary: #818181;
+        --color-gray-primary-lighter: #bebca7;
+        --color-gray-primary-darker: #8f8d7d;
+        --color-gray-secondary: #bbb;
+        --color-gray-light: #ffffff;
+        --color-gray-light-bg: #ccc;
+        --color-gray-light-bg-section: #dbdbdb;
+        --color-gray-dark: #484848;
+        --color-gray-button: #a9a790;
+        --color-border-primary: #ebebeb;
+        --max-width: 1560px;
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 100 900;
+        font-stretch: 75% 100%;
+        src: url(OpenSans-VariableFont_wdth_wght-BZBpG5Iz.ttf) format("truetype");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-weight: 100 900;
+        font-stretch: 75% 100%;
+        src: url(OpenSans-Italic-VariableFont_wdth_wght-B4AZ-wl6.ttf) format("truetype");
+        font-display: swap;
+      }
+      * {
+        padding: 0;
+        line-height: 1.6;
+      }
+      body {
+        font-family: Open Sans, sans-serif;
+        padding: 0 0 50px;
+      }
+      .top-bar {
+        padding: 25px 10px 0;
+        margin: 0 auto 1px;
+        width: 100%;
+      }
+      .top-bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 0 25px;
+        border-bottom: 1px solid var(--color-border-primary);
+        width: 100%;
+        max-width: var(--max-width);
+      }
+      @media (max-width: 720px) {
+        .top-bar-container {
+          flex-flow: column nowrap;
+          gap: 20px;
+        }
+      }
+      .main-logo {
+        max-width: 221px;
+        max-height: 67px;
+      }
+      .top-bar-phone {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #484848;
+      }
+      .main-nav-phone a,
+      .top-bar-phone a {
+        text-decoration: none;
+        color: inherit;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+      }
+      .main-nav {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0 10px;
+      }
+      .main-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        max-width: var(--max-width);
+      }
+      .nav-menu-hamburger {
+        display: none;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: 0 0;
+        border: none;
+      }
+      .nav-menu-hamburger-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 36px;
+        color: var(--color-gray-primary);
+      }
+      .nav-menu-list-item,
+      .nav-menu-list-link {
+        position: relative;
+        white-space: nowrap;
+      }
+      .nav-menu-hamburger .icon-bars {
+        visibility: visible;
+        opacity: 1;
+      }
+      .nav-menu-hamburger .icon-xmark {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .nav-menu-list {
+        display: flex;
+        gap: 40px;
+        min-width: 200px;
+      }
+      .nav-menu-list-link,
+      .submenu a {
+        font-size: 13px;
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .nav-menu-list-link {
+        color: #484848;
+        font-weight: 500;
+        border: none;
+        background: 0 0;
+      }
+      .submenu {
+        background: #484848;
+        z-index: 1000;
+      }
+      .submenu a {
+        padding: 10px 30px;
+        margin: 0;
+      }
+      .submenu span {
+        position: absolute;
+        right: 12px;
+      }
+      .submenu li {
+        position: relative;
+      }
+      .submenu-level-2 {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background: #484848;
+        min-width: 250px;
+        z-index: 1001;
+      }
+      .main-nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .main-nav-phone {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+        color: var(--color-gray-dark);
+        opacity: 0;
+      }
+      .main-nav-quote-btn {
+        padding: 8px 30px;
+        background-color: var(--color-primary);
+        color: #fff;
+        border: none;
+        border-radius: 0;
+        font-weight: 500;
+        display: inline-block;
+        max-width: 280px;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 0;
+        white-space: nowrap;
+      }
+      @media (max-width: 1200px) {
+        .nav-menu-list,
+        .nav-menu-list-link {
+          background-color: var(--color-gray-dark);
+        }
+        .main-nav-container {
+          position: relative;
+        }
+        .nav-menu-hamburger {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          margin: 10px 0;
+        }
+        .nav-menu-list,
+        .submenu-level-2 {
+          left: 0;
+          height: fit-content;
+        }
+        .nav-menu-list {
+          display: none;
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          flex-flow: column nowrap;
+          gap: 0;
+          align-items: start;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+        }
+        .nav-menu-list a,
+        .nav-menu-list button {
+          display: block;
+          width: 100%;
+          text-align: left;
+          color: #fff;
+        }
+        .nav-menu-list-item {
+          width: 100%;
+        }
+        .nav-menu-list-link {
+          font-size: 13px;
+          padding: 10px 30px;
+          margin: 0;
+          display: block;
+          text-transform: uppercase;
+        }
+        .submenu,
+        .submenu-level-2 {
+          display: none;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+        .nav-menu-list-link span {
+          position: absolute;
+          right: 12px;
+          display: inline-flex;
+          align-items: center;
+          vertical-align: middle;
+        }
+        .nav-menu-back-button {
+          display: block;
+          width: 100%;
+        }
+        .nav-menu-back-button span {
+          position: static;
+          margin-right: 8px;
+        }
+        .show-in-mobile-only {
+          display: block;
+        }
+      }
+      .svg-icon {
+        width: 1em;
+        height: auto;
+        vertical-align: baseline;
+        fill: currentColor;
+      }
+      .main-nav-left .svg-icon {
+        width: 0.6em;
+      }
+    </style>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="icons/icon-menu.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -10,22 +503,36 @@
     />
     <title>Hood Builder | Professional Restaurant Contractors in Denver, CO</title>
 
-    <script type="module" crossorigin src="assets/index-D976Dntm.js"></script>
-    <link rel="stylesheet" crossorigin href="assets/index-BvzQT1ZY.css" />
+    <!-- Preload LCP image (no media query) -->
+    <link rel="preload" href="images/img-slider-fire-protection.webp" fetchpriority="high" as="image" />
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="assets/index-BvzQT1ZY.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
+    <!-- Preload critical JS -->
+    <link rel="preload" href="assets/index-D976Dntm.js" as="script" />
+
+    <!-- Preload CallRail script -->
+    <script defer src="https://cdn.callrail.com/script.js"></script>
+
+    <!-- Fallback stylesheet and scripts -->
+    <link rel="stylesheet" href="assets/index-BvzQT1ZY.css" />
+    <script type="module" src="assets/index-D976Dntm.js" defer></script>
   </head>
+
   <body>
     <!-- Top Bar -->
     <div class="top-bar">
       <div class="top-bar-container">
         <a class="main-logo" href="/" aria-label="Homepage">
-          <img src="logos/logo-main-3.webp" alt="HoodBuilder Logo" />
+          <img src="/logos/logo-main-3.webp" alt="HoodBuilder Logo" />
         </a>
         <div class="top-bar-phone">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-icon">
             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
             <path
               d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
-            />
+            ></path>
           </svg>
           <a href="tel:+1-303-777-7720">(303) 777 7720</a>
         </div>
@@ -39,17 +546,17 @@
           <div class="main-nav-left">
             <button class="nav-menu-hamburger" type="button" aria-label="Hamburger Button">
               <span class="nav-menu-hamburger-icon icon-bars">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
                   <path
                     d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-                  />
+                  ></path>
                 </svg>
               </span>
               <span class="nav-menu-hamburger-icon icon-xmark">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-icon">
                   <path
                     d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-                  />
+                  ></path>
                 </svg>
               </span>
             </button>
@@ -58,10 +565,10 @@
                 <button class="nav-menu-list-link">
                   All Services
                   <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                       <path
                         d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                      />
+                      ></path>
                     </svg>
                   </span>
                 </button>
@@ -70,41 +577,36 @@
                     <li class="nav-menu-back-button">
                       <button class="nav-menu-list-link">
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                               d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                         Back
                       </button>
                     </li>
                     <li>
-                      <a href="https://www.hoodbuilder.com/services/all-services/" class="show-in-mobile-only"
-                        >All Services</a
-                      >
+                      <a href="/services/all-services/" class="show-in-mobile-only">All Services</a>
                     </li>
                     <li>
-                      <a href="https://www.hoodbuilder.com/services/introduction-walk-in-coolers-and-freezers/"
-                        >walk-in coolers and freezers</a
-                      >
+                      <a href="/services/introduction-walk-in-coolers-and-freezers/">walk-in coolers and freezers</a>
                     </li>
                     <li>
-                      <a
-                        href="https://www.hoodbuilder.com/services/food-trucks-design-fire-suppression-installation-services/"
+                      <a href="/services/food-trucks-design-fire-suppression-installation-services/"
                         >food trucks/food trailers design</a
                       >
                     </li>
                     <li class="has-submenu">
-                      <a href="https://www.hoodbuilder.com/services/restaurant-services/"
+                      <a href="/services/restaurant-services/"
                         >restaurant services
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                               d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                       </a>
@@ -113,59 +615,35 @@
                           <li class="nav-menu-back-button">
                             <button class="nav-menu-list-link">
                               <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                                   <path
                                     d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                                  />
+                                  ></path>
                                 </svg>
                               </span>
                               Back
                             </button>
                           </li>
                           <li>
-                            <a
-                              href="https://www.hoodbuilder.com/services/restaurant-services/"
-                              class="show-in-mobile-only"
-                              >restaurant services</a
-                            >
+                            <a href="/services/restaurant-services/" class="show-in-mobile-only">restaurant services</a>
                           </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/restaurant-services/remodeling/"
-                              >restaurant remodeling</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/restaurant-services/equipment/"
-                              >restaurant equipment</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/restaurant-services/design/"
-                              >commercial kitchen design</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/restaurant-services/construction/"
-                              >restaurant construction</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/restaurant-services/cleaning/"
-                              >commercial kitchen cleaning</a
-                            >
-                          </li>
+                          <li><a href="/services/restaurant-services/remodeling/">restaurant remodeling</a></li>
+                          <li><a href="/services/restaurant-services/equipment/">restaurant equipment</a></li>
+                          <li><a href="/services/restaurant-services/design/">commercial kitchen design</a></li>
+                          <li><a href="/services/restaurant-services/construction/">restaurant construction</a></li>
+                          <li><a href="/services/restaurant-services/cleaning/">commercial kitchen cleaning</a></li>
                         </ul>
                       </div>
                     </li>
                     <li class="has-submenu">
-                      <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/"
+                      <a href="/services/fire-suppression-systems/"
                         >fire protection
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                               d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                       </a>
@@ -174,69 +652,41 @@
                           <li class="nav-menu-back-button">
                             <button class="nav-menu-list-link">
                               <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                                   <path
                                     d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                                  />
+                                  ></path>
                                 </svg>
                               </span>
                               Back
                             </button>
                           </li>
                           <li>
-                            <a
-                              href="https://www.hoodbuilder.com/services/fire-suppression-systems/"
-                              class="show-in-mobile-only"
+                            <a href="/services/fire-suppression-systems/" class="show-in-mobile-only"
                               >fire protection</a
                             >
                           </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/fire-restoration/">commercial fire restoration</a>
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/installations/"
-                              >installations</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/repair/">repair</a>
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/service/"
-                              >services</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/buckeye/">buckeye</a>
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/ansul/">ansul</a>
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/pyrochem/"
-                              >pyrochem</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/amerex/">amerex</a>
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/range-guard/"
-                              >range guard</a
-                            >
-                          </li>
+                          <li><a href="/fire-restoration/">commercial fire restoration</a></li>
+                          <li><a href="/services/fire-suppression-systems/installations/">installations</a></li>
+                          <li><a href="/services/fire-suppression-systems/repair/">repair</a></li>
+                          <li><a href="/services/fire-suppression-systems/service/">services</a></li>
+                          <li><a href="/services/fire-suppression-systems/buckeye/">buckeye</a></li>
+                          <li><a href="/services/fire-suppression-systems/ansul/">ansul</a></li>
+                          <li><a href="/services/fire-suppression-systems/pyrochem/">pyrochem</a></li>
+                          <li><a href="/services/fire-suppression-systems/amerex/">amerex</a></li>
+                          <li><a href="/services/fire-suppression-systems/range-guard/">range guard</a></li>
                         </ul>
                       </div>
                     </li>
                     <li class="has-submenu">
-                      <a href="https://www.hoodbuilder.com/services/general-contracting/"
+                      <a href="/services/general-contracting/"
                         >restaurant build up & general contracting
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                               d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                       </a>
@@ -245,70 +695,45 @@
                           <li class="nav-menu-back-button">
                             <button class="nav-menu-list-link">
                               <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                                   <path
                                     d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                                  />
+                                  ></path>
                                 </svg>
                               </span>
                               Back
                             </button>
                           </li>
                           <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/"
-                              >restaurant build up & general contracting</a
-                            >
+                            <a href="/services/general-contracting/">restaurant build up & general contracting</a>
                           </li>
                           <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/architectural-drawing/"
-                              >architectural drawing</a
-                            >
+                            <a href="/services/general-contracting/architectural-drawing/">architectural drawing</a>
                           </li>
+                          <li><a href="/services/general-contracting/electrical-drawing/">electrical drawing</a></li>
                           <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/electrical-drawing/"
-                              >electrical drawing</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.hoodbuilder.com/services/general-contracting/fire-suppression-system-drawing/"
+                            <a href="/services/general-contracting/fire-suppression-system-drawing/"
                               >fire suppression system drawing</a
                             >
                           </li>
+                          <li><a href="/services/general-contracting/mechanical-drawing/">mechanical drawing</a></li>
+                          <li><a href="/services/general-contracting/plumbing-services/">plumbing services</a></li>
                           <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/mechanical-drawing/"
-                              >mechanical drawing</a
-                            >
+                            <a href="/services/general-contracting/structural-engineering/">structural engineering</a>
                           </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/plumbing-services/"
-                              >plumbing services</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/structural-engineering/"
-                              >structural engineering</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/general-contracting/grease-trap/"
-                              >grease trap</a
-                            >
-                          </li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/grease-interceptor/">grease interceptor</a>
-                          </li>
+                          <li><a href="/services/general-contracting/grease-trap/">grease trap</a></li>
+                          <li><a href="/services/grease-interceptor/">grease interceptor</a></li>
                         </ul>
                       </div>
                     </li>
                     <li class="has-submenu">
-                      <a href="https://www.hoodbuilder.com/services/hoods/"
+                      <a href="/services/hoods/"
                         >hoods
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <path
                               d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                       </a>
@@ -317,22 +742,22 @@
                           <li class="nav-menu-back-button">
                             <button class="nav-menu-list-link">
                               <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                                   <path
                                     d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                                  />
+                                  ></path>
                                 </svg>
                               </span>
                               Back
                             </button>
                           </li>
-                          <li><a href="https://www.hoodbuilder.com/services/hoods/">hoods</a></li>
-                          <li><a href="https://www.hoodbuilder.com/services/hoods/cleaning/">cleaning</a></li>
-                          <li><a href="https://www.hoodbuilder.com/services/hoods/fans/">fans</a></li>
-                          <li><a href="https://www.hoodbuilder.com/services/hoods/installation/">installation</a></li>
-                          <li><a href="https://www.hoodbuilder.com/services/hoods/make-up-air/">make-up air</a></li>
+                          <li><a href="/services/hoods/">hoods</a></li>
+                          <li><a href="/services/hoods/cleaning/">cleaning</a></li>
+                          <li><a href="/services/hoods/fans/">fans</a></li>
+                          <li><a href="/services/hoods/installation/">installation</a></li>
+                          <li><a href="/services/hoods/make-up-air/">make-up air</a></li>
                           <li>
-                            <a href="https://www.hoodbuilder.com/services/hoods/shepherd-disposable-grease-filters/"
+                            <a href="/services/hoods/shepherd-disposable-grease-filters/"
                               >shepherd disposable grease filter</a
                             >
                           </li>
@@ -340,13 +765,13 @@
                       </div>
                     </li>
                     <li class="has-submenu">
-                      <a href="https://www.hoodbuilder.com/services/hvac/"
+                      <a href="/services/hvac/"
                         >hvac
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <path
                               d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                       </a>
@@ -355,45 +780,39 @@
                           <li class="nav-menu-back-button">
                             <button class="nav-menu-list-link">
                               <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                                   <path
                                     d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                                  />
+                                  ></path>
                                 </svg>
                               </span>
                               Back
                             </button>
                           </li>
-                          <li><a href="https://www.hoodbuilder.com/services/hvac/">HVAC</a></li>
-                          <li>
-                            <a href="https://www.hoodbuilder.com/services/hvac/air-conditioning/">air conditioning</a>
-                          </li>
-                          <li><a href="https://www.hoodbuilder.com/services/hvac/make-up-air/">make-up air</a></li>
-                          <li><a href="https://www.hoodbuilder.com/services/hvac/heating/">heating</a></li>
-                          <li><a href="https://www.hoodbuilder.com/services/hvac/ventilation/">ventilation</a></li>
+                          <li><a href="/services/hvac/">HVAC</a></li>
+                          <li><a href="/services/hvac/air-conditioning/">air conditioning</a></li>
+                          <li><a href="/services/hvac/make-up-air/">make-up air</a></li>
+                          <li><a href="/services/hvac/heating/">heating</a></li>
+                          <li><a href="/services/hvac/ventilation/">ventilation</a></li>
                         </ul>
                       </div>
                     </li>
                     <li>
-                      <a href="https://www.hoodbuilder.com/services/air-balancing/">air balancing</a>
+                      <a href="/services/air-balancing/">air balancing</a>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-menu-list-item">
-                <a class="nav-menu-list-link" href="https://www.hoodbuilder.com/about-us/">About Us</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <a class="nav-menu-list-link" href="https://www.hoodbuilder.com/clients/">Clients</a>
-              </li>
+              <li class="nav-menu-list-item"><a class="nav-menu-list-link" href="/about-us/">About Us</a></li>
+              <li class="nav-menu-list-item"><a class="nav-menu-list-link" href="/clients/">Clients</a></li>
               <li class="nav-menu-list-item has-submenu">
-                <a class="nav-menu-list-link" href="https://www.hoodbuilder.com/hoodbuilders-featured-projects/">
+                <a class="nav-menu-list-link" href="/hoodbuilders-featured-projects/">
                   HoodBuilder's Projects
                   <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                       <path
                         d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
-                      />
+                      ></path>
                     </svg>
                   </span>
                 </a>
@@ -402,46 +821,39 @@
                     <li class="nav-menu-back-button">
                       <button class="nav-menu-list-link">
                         <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512" class="svg-icon">
                             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                               d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
-                            />
+                            ></path>
                           </svg>
                         </span>
                         Back
                       </button>
                     </li>
                     <li class="show-in-mobile-only">
-                      <a href="https://www.hoodbuilder.com/hoodbuilders-featured-projects/">HoodBuilder's Projects</a>
+                      <a href="/hoodbuilders-featured-projects/">HoodBuilder's Projects</a>
                     </li>
                     <li>
-                      <a
-                        href="https://www.hoodbuilder.com/hoodbuilders-featured-projects/church-and-union-restaurant-construction/"
+                      <a href="/hoodbuilders-featured-projects/church-and-union-restaurant-construction/"
                         >church and union</a
                       >
                     </li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-menu-list-item">
-                <a class="nav-menu-list-link" href="https://www.hoodbuilder.com/faq/">FAQ</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <a class="nav-menu-list-link" href="https://www.hoodbuilder.com/blog">Blog</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <a class="nav-menu-list-link" href="https://www.hoodbuilder.com/contact-us/">Contact Us</a>
-              </li>
+              <li class="nav-menu-list-item"><a class="nav-menu-list-link" href="/faq/">FAQ</a></li>
+              <li class="nav-menu-list-item"><a class="nav-menu-list-link" href="/blog">Blog</a></li>
+              <li class="nav-menu-list-item"><a class="nav-menu-list-link" href="/contact-us/">Contact Us</a></li>
             </ul>
           </div>
           <div class="main-nav-right">
             <div class="main-nav-phone">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-icon">
                 <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                 <path
                   d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
-                />
+                ></path>
               </svg>
               <a href="tel:+1-303-777-7720">(303) 777 7720</a>
             </div>
@@ -466,15 +878,19 @@
           <div class="slider-track">
             <div class="slider-card">
               <img
+                fetchpriority="high"
                 loading="eager"
                 class="slider-card-background"
-                src="images/img-slider-fire-protection.webp"
+                src="/images/img-slider-fire-protection.webp"
                 alt="Professional chef cooking on a commercial kitchen stove"
+                width="475"
+                height="520"
+                decoding="async"
               />
-              <a class="slider-card-content" href="https://www.hoodbuilder.com/services/fire-suppression-systems/">
+              <a class="slider-card-content" href="/services/fire-suppression-systems/">
                 <div class="slider-card-icon">
                   <div class="slider-card-circle"></div>
-                  <img loading="lazy" src="icons/icon-white-fireprotection.webp" alt="Fire Protection Icon" />
+                  <img loading="lazy" src="/icons/icon-white-fireprotection.webp" alt="Fire Protection Icon" />
                 </div>
                 <div class="slider-card-text">
                   <p>Fire Protection</p>
@@ -488,13 +904,13 @@
               <img
                 loading="lazy"
                 class="slider-card-background"
-                src="images/img-slider-generalcontracting.webp"
+                src="/images/img-slider-generalcontracting.webp"
                 alt="Construction tools including gloves, alignment tool, and building blueprints on a work table"
               />
-              <a class="slider-card-content" href="https://www.hoodbuilder.com/services/general-contracting/">
+              <a class="slider-card-content" href="/services/general-contracting/">
                 <div class="slider-card-icon">
                   <div class="slider-card-circle"></div>
-                  <img loading="lazy" src="icons/icon-white-generalcontracting.webp" alt="General Contracting Icon" />
+                  <img loading="lazy" src="/icons/icon-white-generalcontracting.webp" alt="General Contracting Icon" />
                 </div>
                 <div class="slider-card-text">
                   <p>Restaurant Build Up and General Contracting</p>
@@ -508,13 +924,13 @@
               <img
                 loading="lazy"
                 class="slider-card-background"
-                src="images/img-slider-restaurants.webp"
+                src="/images/img-slider-restaurants.webp"
                 alt="Interior of a modern restaurant with neatly arranged tables and chairs"
               />
-              <a class="slider-card-content" href="https://www.hoodbuilder.com/services/restaurant-services/">
+              <a class="slider-card-content" href="/services/restaurant-services/">
                 <div class="slider-card-icon">
                   <div class="slider-card-circle"></div>
-                  <img loading="lazy" src="icons/icon-white-restaurants.webp" alt="Restaurant Icon" />
+                  <img loading="lazy" src="/icons/icon-white-restaurants.webp" alt="Restaurant Icon" />
                 </div>
                 <div class="slider-card-text">
                   <p>Restaurant Services</p>
@@ -528,13 +944,13 @@
               <img
                 loading="lazy"
                 class="slider-card-background"
-                src="images/img-slider-hoods.webp"
+                src="/images/img-slider-hoods.webp"
                 alt="Commercial restaurant kitchen with stainless steel exhaust hoods over cooking stations"
               />
-              <a class="slider-card-content" href="https://www.hoodbuilder.com/services/hoods/">
+              <a class="slider-card-content" href="/services/hoods/">
                 <div class="slider-card-icon">
                   <div class="slider-card-circle"></div>
-                  <img loading="lazy" src="icons/icon-white-hoods.webp" alt="Hood Icon" />
+                  <img loading="lazy" src="/icons/icon-white-hoods.webp" alt="Hood Icon" />
                 </div>
                 <div class="slider-card-text">
                   <p>Hoods, Mua, Exhaust Fans</p>
@@ -548,13 +964,13 @@
               <img
                 loading="lazy"
                 class="slider-card-background"
-                src="images/img-slider-air-balancing.webp"
+                src="/images/img-slider-air-balancing.webp"
                 alt="Digital air balancing screen used to control HVAC airflow and temperature"
               />
-              <a class="slider-card-content" href="https://www.hoodbuilder.com/services/air-balancing/">
+              <a class="slider-card-content" href="/services/air-balancing/">
                 <div class="slider-card-icon">
                   <div class="slider-card-circle"></div>
-                  <img loading="lazy" src="icons/icon-white-wind.webp" alt="Air Icon" />
+                  <img loading="lazy" src="/icons/icon-white-wind.webp" alt="Air Icon" />
                 </div>
                 <div class="slider-card-text">
                   <p>Air Balancing</p>
@@ -567,19 +983,19 @@
           </div>
         </div>
         <button class="slider-arrow slider-prev" type="button" aria-label="Previous Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
             <path
               d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
-            />
+            ></path>
           </svg>
         </button>
         <button class="slider-arrow slider-next" type="button" aria-label="Next Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
             <path
               d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
-            />
+            ></path>
           </svg>
         </button>
       </div>
@@ -605,16 +1021,16 @@
     <section class="clients-section">
       <div class="clients-container">
         <ul class="client-logos">
-          <li><img loading="lazy" src="logos/logo-pizzahut.webp" alt="PizzaHut Logo" width="82" height="83" /></li>
-          <li><img loading="lazy" src="logos/logo-mcdonalds.webp" alt="McDonald's Logo" width="96" height="65" /></li>
-          <li><img loading="lazy" src="logos/logo-toyota.webp" alt="Toyota Logo" width="82" height="67" /></li>
-          <li><img loading="lazy" src="logos/logo-nissan.webp" alt="Nissan Logo" width="94" height="80" /></li>
-          <li><img loading="lazy" src="logos/logo-costco.webp" alt="Costco Logo" width="118" height="32" /></li>
-          <li><img loading="lazy" src="logos/logo-ikea.webp" alt="IKEA Logo" width="119" height="21" /></li>
-          <li><img loading="lazy" src="logos/logo-carrefour.webp" alt="Carrefour Logo" width="106" height="84" /></li>
-          <li><img loading="lazy" src="logos/logo-subway.webp" alt="Subway Logo" width="134" height="39" /></li>
+          <li><img loading="lazy" src="/logos/logo-pizzahut.webp" alt="PizzaHut Logo" width="82" height="83" /></li>
+          <li><img loading="lazy" src="/logos/logo-mcdonalds.webp" alt="McDonald's Logo" width="96" height="65" /></li>
+          <li><img loading="lazy" src="/logos/logo-toyota.webp" alt="Toyota Logo" width="82" height="67" /></li>
+          <li><img loading="lazy" src="/logos/logo-nissan.webp" alt="Nissan Logo" width="94" height="80" /></li>
+          <li><img loading="lazy" src="/logos/logo-costco.webp" alt="Costco Logo" width="118" height="32" /></li>
+          <li><img loading="lazy" src="/logos/logo-ikea.webp" alt="IKEA Logo" width="119" height="21" /></li>
+          <li><img loading="lazy" src="/logos/logo-carrefour.webp" alt="Carrefour Logo" width="106" height="84" /></li>
+          <li><img loading="lazy" src="/logos/logo-subway.webp" alt="Subway Logo" width="134" height="39" /></li>
         </ul>
-        <a class="section-button" href="https://www.hoodbuilder.com/clients/">View All Clients</a>
+        <a class="section-button" href="/clients/">View All Clients</a>
       </div>
     </section>
 
@@ -657,7 +1073,7 @@
     <section class="featured-section">
       <img
         loading="lazy"
-        src="images/img-bg-featured.webp"
+        src="/images/img-bg-featured.webp"
         alt="Close-up of hands sketching on a construction blueprint during a planning discussion"
       />
       <div class="featured-container">
@@ -668,9 +1084,7 @@
           contractors can execute projects of any size, and are sure to exceed your expectations far more than any Hood
           Builder competitor.
         </p>
-        <a class="featured-button" href="https://www.hoodbuilder.com/services/general-contracting/"
-          >View Our Services</a
-        >
+        <a class="featured-button" href="/services/general-contracting/">View Our Services</a>
       </div>
     </section>
 
@@ -751,7 +1165,7 @@
         <div>
           <img
             loading="lazy"
-            src="images/img-hood.webp"
+            src="/images/img-hood.webp"
             alt="Stainless steel restaurant exhaust hood used for commercial ventilation systems"
             width="512"
           />
@@ -761,7 +1175,7 @@
             <p class="section-description">
               We deal in, design, and install ventilation systems from some of the most reputed brands in the industry.
               From multi-utility restaurant construction to kitchen
-              <a href="https://www.hoodbuilder.com/services/hoods/installation/">hood installation</a>
+              <a href="/services/hoods/installation/">hood installation</a>
               as well as fire suppression system installation, we are your go-to partner for planning and completing the
               entire crucial setup of a modern commercial restaurant in the most professional and satisfying manner.
             </p>
@@ -775,21 +1189,21 @@
             <h3>Our Commercial Kitchen is In Good Hands</h3>
             <p class="section-description">
               We recommend
-              <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/">fire protection systems</a>
+              <a href="/services/fire-suppression-systems/">fire protection systems</a>
               from only the most trusted brands such as Ansul, Range Guard, Pyrochem, and Amerex. Our professionals are
               uniquely qualified to properly install all the components of fire extinguishers, fire sprinklers, and fire
               alarm systems in
-              <a href="https://www.hoodbuilder.com/services/restaurant-services/">restaurants</a>,
-              <a href="https://www.hoodbuilder.com/services/food-trucks-design-fire-suppression-installation-services/"
+              <a href="/services/restaurant-services/">restaurants</a>,
+              <a href="/services/food-trucks-design-fire-suppression-installation-services/"
                 >food trucks, and trailers</a
               >. In addition to this, we also specialize in the installation of highly efficient
-              <a href="https://www.hoodbuilder.com/services/hvac/">HVAC systems</a>
+              <a href="/services/hvac/">HVAC systems</a>
               as well as their inspection, repair, and maintenance. We firmly stand behind all the products we offer and
               provide follow-up to ensure a completely hassle-free operation.
             </p>
           </div>
         </div>
-        <a href="https://www.hoodbuilder.com/about-us/" class="section-button">About Hoot Builder</a>
+        <a href="/about-us/" class="section-button">About Hoot Builder</a>
       </div>
     </section>
 
@@ -802,22 +1216,20 @@
             kitchen fire. To reduce the risk of fire, it is essential to keep the ventilation hood systems in good
             order. Our highly skilled technicians will maintain and service your kitchen hoods in an effective manner so
             that fire hazards can be removed. Our professional
-            <a href="https://www.hoodbuilder.com/services/hoods/cleaning/">kitchen hood cleaning</a>
+            <a href="/services/hoods/cleaning/">kitchen hood cleaning</a>
             will prevent grease buildup and ensure the safety of your people and assets as a result. Plus, this will
             help you maintain a safe and comfortable working environment.
           </p>
           <p class="section-description">
             There are many aspects to commercial hood system, including cooker hoods, exhaust fans, and restaurant
-            <a href="https://www.hoodbuilder.com/services/grease-interceptor/">grease interceptors</a>
+            <a href="/services/grease-interceptor/">grease interceptors</a>
             , just to name a few. We have the expertise and parts to help with all aspects of your commercial restaurant
             equipment, including your hood systems.
           </p>
           <p class="section-description">
             In case there is an occurrence of fire, our innovative fire prevention systems will help you control it
             immediately. Our
-            <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/installations/"
-              >installation procedures</a
-            >
+            <a href="/services/fire-suppression-systems/installations/">installation procedures</a>
             are accurate and top quality and in line with the appliance-specific needs of your food facility. Our goal
             is to safeguard your building against the dangers of fire so that no physician injuries and property damage
             happen.
@@ -859,10 +1271,7 @@
             <h2>Get a Free Quote</h2>
             <p>
               If you operate in and around Denver, Colorado, we can build and
-              <a
-                href="https://www.hoodbuilder.com/services/restaurant-services/design/"
-                rel="noopener noreferrer"
-                target="_blank"
+              <a href="/services/restaurant-services/design/" rel="noopener noreferrer" target="_blank"
                 >design a new restaurant</a
               >
               or provide you with restaurant remodeling to bring your dream to life. We can provide you with restaurant
@@ -871,7 +1280,7 @@
             </p>
             <p>
               Most importantly, we can ensure your kitchen operates efficiently with
-              <a href="https://www.hoodbuilder.com/services/hoods/installation/">hood installation</a>
+              <a href="/services/hoods/installation/">hood installation</a>
               and repair, fire suppression system maintenance and repair, and HVAC – heating and air condition
               maintenance and repair.
             </p>
@@ -952,7 +1361,7 @@
           <!--            </div>-->
           <div class="text-column">
             <h3>Get Your Restaurant Constructed and Designed by Experts</h3>
-            <a id="quoteForm" href="https://www.hoodbuilder.com/contact-us/">Get Your Free Quote</a>
+            <a id="quoteForm" href="/contact-us/">Get Your Free Quote</a>
           </div>
         </div>
       </div>
@@ -962,13 +1371,10 @@
     <section class="related-articles-section">
       <ul class="related-articles">
         <li class="related-articles-container">
-          <a
-            href="https://www.hoodbuilder.com/hvac-zoningin-offices-restaurants-and-warehouses/"
-            class="related-articles-item"
-          >
+          <a href="/hvac-zoningin-offices-restaurants-and-warehouses/" class="related-articles-item">
             <img
               loading="lazy"
-              src="images/img-article-hvac-zoning-for-offices-warehouses-restaurants.webp"
+              src="/images/img-article-hvac-zoning-for-offices-warehouses-restaurants.webp"
               alt="Close-up of a thermometer with a construction worker blurred in the background"
               class="article-image"
             />
@@ -977,29 +1383,29 @@
               <h4>Essential Safety Measures for Construction Sites</h4>
               <div class="related-articles-meta">
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
-                    />
+                    ></path>
                   </svg>
                   Massoud Farazandeh</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
-                    />
+                    ></path>
                   </svg>
                   Mar 31, 2025</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"
-                    />
+                    ></path>
                   </svg>
                   214</span
                 >
@@ -1014,10 +1420,10 @@
           </a>
         </li>
         <li class="related-articles-container">
-          <a href="https://www.hoodbuilder.com/restaurant-kitchen-cooling-design/" class="related-articles-item">
+          <a href="/restaurant-kitchen-cooling-design/" class="related-articles-item">
             <img
               loading="lazy"
-              src="images/img-article-restaurant-kitchen-cooling-system-design-summe.webp"
+              src="/images/img-article-restaurant-kitchen-cooling-system-design-summe.webp"
               alt="Construction worker servicing rooftop HVAC split unit on a restaurant building"
               class="article-image"
             />
@@ -1026,29 +1432,29 @@
               <h4>Building Maintenance Best Practices</h4>
               <div class="related-articles-meta">
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
-                    />
+                    ></path>
                   </svg>
                   Massoud Farazandeh</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
-                    />
+                    ></path>
                   </svg>
                   Mar 31, 2025</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"
-                    />
+                    ></path>
                   </svg>
                   214</span
                 >
@@ -1060,13 +1466,10 @@
           </a>
         </li>
         <li class="related-articles-container">
-          <a
-            href="https://www.hoodbuilder.com/best-restaurant-general-contracting-service-in-denver/"
-            class="related-articles-item"
-          >
+          <a href="/best-restaurant-general-contracting-service-in-denver/" class="related-articles-item">
             <img
               loading="lazy"
-              src="images/img-article-general-contracting.webp"
+              src="/images/img-article-general-contracting.webp"
               alt="Female contractor discussing kitchen plans with restaurant chefs in white uniforms"
               class="article-image"
             />
@@ -1075,29 +1478,29 @@
               <h4>Latest Construction Technology Trends</h4>
               <div class="related-articles-meta">
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
-                    />
+                    ></path>
                   </svg>
                   Massoud Farazandeh</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
-                    />
+                    ></path>
                   </svg>
                   Mar 31, 2025</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"
-                    />
+                    ></path>
                   </svg>
                   214</span
                 >
@@ -1109,10 +1512,10 @@
           </a>
         </li>
         <li class="related-articles-container">
-          <a href="https://www.hoodbuilder.com/walk-in-freezer-maintenance-tips/" class="related-articles-item">
+          <a href="/walk-in-freezer-maintenance-tips/" class="related-articles-item">
             <img
               loading="lazy"
-              src="images/img-article-freezer-maintenance.webp"
+              src="/images/img-article-freezer-maintenance.webp"
               alt="Commercial kitchen with stainless steel sink, dining area, and glass-door freezer"
               class="article-image"
             />
@@ -1121,29 +1524,29 @@
               <h4>How Walk-In Freezer Maintenance Saves You Money in the Long Run</h4>
               <div class="related-articles-meta">
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
-                    />
+                    ></path>
                   </svg>
                   Massoud Farazandeh</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
-                    />
+                    ></path>
                   </svg>
                   Mar 31, 2025</span
                 >
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" class="svg-icon">
                     <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
                       d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"
-                    />
+                    ></path>
                   </svg>
                   214</span
                 >
@@ -1163,7 +1566,7 @@
         <div class="footer-section">
           <div>
             <a href="/" aria-label="Homepage">
-              <img loading="lazy" src="logos/logo-footer.svg" alt="Main Logo of HoodBuilder" width="225" height="70" />
+              <img loading="lazy" src="/logos/logo-footer.svg" alt="Main Logo of HoodBuilder" width="225" height="70" />
             </a>
           </div>
           <div>
@@ -1173,7 +1576,7 @@
             </h5>
           </div>
           <div>
-            <a href="https://www.hoodbuilder.com/contact-us/" class="footer-button">Contact Us</a>
+            <a href="/contact-us/" class="footer-button">Contact Us</a>
           </div>
         </div>
         <div class="footer-section">
@@ -1181,76 +1584,43 @@
             <div class="footer-column">
               <h5>Restaurant Services</h5>
               <ul>
+                <li><a href="/services/restaurant-services/cleaning/">Commercial Kitchen Cleaning</a></li>
                 <li>
-                  <a href="https://www.hoodbuilder.com/services/restaurant-services/cleaning/"
-                    >Commercial Kitchen Cleaning</a
-                  >
+                  <a href="/services/restaurant-services/construction/">Commercial Kitchen & Restaurant Construction</a>
                 </li>
+                <li><a href="/services/restaurant-services/design/">Commercial Kitchen Design & Remodeling</a></li>
                 <li>
-                  <a href="https://www.hoodbuilder.com/services/restaurant-services/construction/"
-                    >Commercial Kitchen & Restaurant Construction</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/restaurant-services/design/"
-                    >Commercial Kitchen Design & Remodeling</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/restaurant-services/equipment/"
+                  <a href="/services/restaurant-services/equipment/"
                     >Commercial Restaurant Equipment in Denver, Colorado</a
                   >
                 </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/restaurant-services/remodeling/"
-                    >Restaurant Remodeling</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/introduction-walk-in-coolers-and-freezers/"
-                    >Walk-in Coolers and Freezers</a
-                  >
-                </li>
+                <li><a href="/services/restaurant-services/remodeling/">Restaurant Remodeling</a></li>
+                <li><a href="/services/introduction-walk-in-coolers-and-freezers/">Walk-in Coolers and Freezers</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h5>HVAC</h5>
               <ul>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/hvac/air-conditioning/"
-                    >Air Conditioning Service in Denver, Colorado</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/hvac/heating/">Heating Services in Denver, Colorado</a>
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/hvac/make-up-air/"
-                    >Make-Up Air Service in Denver, Colorado</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/hvac/ventilation/"
-                    >Ventilation Services in Denver, Colorado</a
-                  >
-                </li>
+                <li><a href="/services/hvac/air-conditioning/">Air Conditioning Service in Denver, Colorado</a></li>
+                <li><a href="/services/hvac/heating/">Heating Services in Denver, Colorado</a></li>
+                <li><a href="/services/hvac/make-up-air/">Make-Up Air Service in Denver, Colorado</a></li>
+                <li><a href="/services/hvac/ventilation/">Ventilation Services in Denver, Colorado</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h5>Hoods</h5>
               <ul>
-                <li><a href="https://www.hoodbuilder.com/services/hoods/cleaning/">Cleaning</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/hoods/fans/">Fans</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/hoods/installation/">Installation</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/hoods/make-up-air/">Make-Up Air</a></li>
+                <li><a href="/services/hoods/cleaning/">Cleaning</a></li>
+                <li><a href="/services/hoods/fans/">Fans</a></li>
+                <li><a href="/services/hoods/installation/">Installation</a></li>
+                <li><a href="/services/hoods/make-up-air/">Make-Up Air</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h5>Food Truck Design</h5>
               <ul>
                 <li>
-                  <a
-                    href="https://www.hoodbuilder.com/services/food-trucks-design-fire-suppression-installation-services/"
+                  <a href="/services/food-trucks-design-fire-suppression-installation-services/"
                     >Food Truck / Food Trailer</a
                   >
                 </li>
@@ -1259,78 +1629,52 @@
             <div class="footer-column">
               <h5>General Contracting</h5>
               <ul>
+                <li><a href="/services/general-contracting/architectural-drawing/">Architectural Drawing</a></li>
+                <li><a href="/services/general-contracting/electrical-drawing/">Electrical Drawing</a></li>
                 <li>
-                  <a href="https://www.hoodbuilder.com/services/general-contracting/architectural-drawing/"
-                    >Architectural Drawing</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/general-contracting/electrical-drawing/"
-                    >Electrical Drawing</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/general-contracting/fire-suppression-system-drawing/"
+                  <a href="/services/general-contracting/fire-suppression-system-drawing/"
                     >Fire Suppression System Drawing</a
                   >
                 </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/general-contracting/mechanical-drawing/"
-                    >Mechanical Drawing</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/general-contracting/plumbing-services/"
-                    >Plumbing Services</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/general-contracting/structural-engineering/"
-                    >Structural Engineering</a
-                  >
-                </li>
+                <li><a href="/services/general-contracting/mechanical-drawing/">Mechanical Drawing</a></li>
+                <li><a href="/services/general-contracting/plumbing-services/">Plumbing Services</a></li>
+                <li><a href="/services/general-contracting/structural-engineering/">Structural Engineering</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h5>Fire Protection</h5>
               <ul>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/installations/"
-                    >Installations</a
-                  >
-                </li>
-                <li><a href="https://www.hoodbuilder.com/services/fire-suppression-systems/repair/">Repair</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/fire-suppression-systems/service/">Service</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/fire-suppression-systems/buckeye/">Buckeye</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/fire-suppression-systems/ansul/">Ansul</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/fire-suppression-systems/pyrochem/">Pyrochem</a></li>
-                <li><a href="https://www.hoodbuilder.com/services/fire-suppression-systems/amerex/">Amerex</a></li>
-                <li>
-                  <a href="https://www.hoodbuilder.com/services/fire-suppression-systems/range-guard/">Range Guard</a>
-                </li>
+                <li><a href="/services/fire-suppression-systems/installations/">Installations</a></li>
+                <li><a href="/services/fire-suppression-systems/repair/">Repair</a></li>
+                <li><a href="/services/fire-suppression-systems/service/">Service</a></li>
+                <li><a href="/services/fire-suppression-systems/buckeye/">Buckeye</a></li>
+                <li><a href="/services/fire-suppression-systems/ansul/">Ansul</a></li>
+                <li><a href="/services/fire-suppression-systems/pyrochem/">Pyrochem</a></li>
+                <li><a href="/services/fire-suppression-systems/amerex/">Amerex</a></li>
+                <li><a href="/services/fire-suppression-systems/range-guard/">Range Guard</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h5>Other Links</h5>
               <ul>
-                <li><a href="https://www.hoodbuilder.com/">Home</a></li>
-                <li><a href="https://www.hoodbuilder.com/about-us/">About Us</a></li>
-                <li><a href="https://www.hoodbuilder.com/clients/">Hood Builder Clients</a></li>
-                <li><a href="https://www.hoodbuilder.com/faq/">FAQ</a></li>
-                <li><a href="https://www.hoodbuilder.com/blog/">Blog</a></li>
-                <li><a href="https://www.hoodbuilder.com/contact-us/">Contact Us</a></li>
-                <li><a href="https://www.hoodbuilder.com/sitemap/">Sitemap</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-us/">About Us</a></li>
+                <li><a href="/clients/">Hood Builder Clients</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/contact-us/">Contact Us</a></li>
+                <li><a href="/sitemap/">Sitemap</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-location">
             <div class="location-box">
               <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-icon" width="1em">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-icon" width="1em">
                   <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                   <path
                     d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
-                  />
+                  ></path>
                 </svg>
                 <span>Location</span>
               </div>
@@ -1341,7 +1685,7 @@
       </div>
       <div class="footer-copyright">
         <div class="footer-copyright-logos">
-          <img loading="lazy" src="logos/logo-footer-copyright.webp" alt="copyright logos" width="248" height="66" />
+          <img loading="lazy" src="/logos/logo-footer-copyright.webp" alt="copyright logos" width="248" height="66" />
           <p>
             California Contractors License #: 943941 We are C-16 and C- 20 Certified.
             <br />
@@ -1361,6 +1705,7 @@
       </div>
     </footer>
 
+    <!-- Inside <head> is fine with defer -->
     <script
       defer
       type="text/javascript"
